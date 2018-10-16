@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" href="/stylesheets/reset.css" />
+	<link rel="stylesheet" href="/stylesheets/home.css" />
+	<link rel="stylesheet" href="/fontPic/iconfont.css" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">	
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+</head>
+<body>
+	
+	<div class="top">
+		<div class="top-t">您好<span><%- name%></span>欢迎进入新闻发布管理系统 ☺ 
+			<em><i class="ge">个人信息</i>
+				<div class="personal">
+					<div class="form">
+						<h4>Personal information</h4>
+						<ul>
+							<li>
+								<b>Current times</b> 
+								<span>2018-10-15</span>
+							</li>
+							<li>
+								<b>Hobby</b> 
+								<span>篮球/绘画</span>				
+							</li>
+							<li>
+								<b>Country/Region</b> 
+								<span>中国</span>
+							</li>
+							<li>
+								<b>City</b> 
+								<span>郑州市</span>
+							</li>
+							<li>
+								<b>Language</b> 
+								<span>Chinese</span>
+							</li>
+							<li>
+								<b>Mobile phone numbers</b>
+								<span>400-000-9898</span>
+							</li>
+							
+						</ul> 
+					</div>
+				</div>
+			</em>
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">注销</button>
+			<em onclick="location.href='/login'">退出</em>
+			<em onclick="location.href='/login'">登录</em>
+		</div>
+	</div>
+	
+	
+
+	<div class="main clean">
+		<div class="ml">
+			<div class="logo">
+				<img src="/images/11.jpg" alt="" />
+			</div>
+			<p onclick="location.href='/home'"><i class="iconfont icon-home2"></i><span>首页</span></p>
+			<ul class="tips">
+				<li><i class="iconfont icon-liebiao"></i><span>个人信息</span>
+					<div>
+						<p onclick="$('.ttwo').fadeIn().siblings().hide()">查看个人信息</p>
+						<p id="opener">完善个人信息</p>
+						<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Large modal</button>-->
+					</div>
+				</li>
+				<li><i class="iconfont icon-chucha"></i><span>数据分析</span>
+					<div>
+						<p onclick="$('.three').fadeIn().siblings().hide()">数据分析图</p>			
+					</div>
+				</li>
+				<li><i class="iconfont icon-gerenxinxi"></i><span>文章管理</span>
+					<div>
+						<p onclick="location.href='/home'">所有文章</p>
+					</div>
+				</li>
+				<li class="alone"><i class="iconfont icon-weixin"></i><span>个人文章</span></li>
+				<li><i class="iconfont icon-tupian"></i><span>订单</span></li>
+				<li><i class="iconfont icon-tiaozheng"></i></li>
+			</ul>
+		</div>
+		
+		<div class="mr">
+			<em>新闻消息</em>
+			<p>
+				<span><em>新闻消息</em><em>|</em></span>
+				<span><em> 个人信息</em><em>|</em></span>
+				<span><em> 数据分析</em><em>|</em></span>
+				<a href="/home">回到首页</a>
+			</p>
+			
+			<div class="tapwrap">
+				<div class="one">
+					<div class="select">
+						<span><input class="sou-first" placeholder="账号查询"/><i class="iconfont icon-search cha1"></i></span>
+						<span><input class="sou-two" type="text" placeholder="内容搜索"/><i class="iconfont icon-search cha2"></i></span>
+						<button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bs-example-modal-lg">发布信息</button>
+					</div>			
+					<table class="table table-hover">
+						<tr class="fir">
+							<th class="text-center">序号</th>
+							<th class="text-center">标题</th>
+							<th class="text-center">内容</th>
+							<th class="text-center">操作</th>
+						</tr>
+						<% data.map(function(item,i){%>
+							<tr class="text-center">
+								<td ><%- i+1%></td>
+								<td class="title text-center"><%- item.title%></td>
+								<td class="text text-center"><%- item.txt%></td>
+								<td class="text-center">
+									<button type="button" class="btn btn-default modify" data-id="<%- item._id%>" data-toggle="modal" data-target=".bs-example-modal-lg">修改</button>	
+									<button class="btn btn-danger shanchu" data-id="<%- item._id%>">删除</button>
+								</td>
+							</tr>
+							
+						<%})%>
+						
+					</table>
+				</div>
+				<div class="two ttwo">
+					<div class="form">
+						<h4>Personal information</h4>
+						<ul>
+							<li>
+								<b>Current times</b> 
+								<span class="curdata">2018-10-15</span>
+							</li>
+							<li>
+								<b>Hobby</b> 
+								<span>篮球/绘画</span>				
+							</li>
+							<li>
+								<b>Country/Region</b> 
+								<span>中国</span>
+							</li>
+							<li>
+								<b>City</b> 
+								<span class="curcity">郑州市</span>
+							</li>
+							<li>
+								<b>Language</b> 
+								<span>Chinese</span>
+							</li>
+							<li>
+								<b>Mobile phone numbers</b>
+								<span class="curnum">400-000-9898</span>
+							</li>
+							
+						</ul> 
+					</div>
+				</div>
+				<div class="three" id="main">
+					
+				</div>
+				<div class="alone"></div>
+			</div>
+			
+			
+			<!--分页-->
+			<nav aria-label="Page navigation" class="clean">
+			  <ul class="pagination fenye">
+			    <li>
+			      <a href="/home?pageNo=<%-pageNo<=1?1:parseInt(pageNo)-1%>" aria-label="Previous">
+			        <span aria-hidden="true">上一页</span>
+			      </a>
+			    </li>
+			    <% if(page>4){%>
+			    	<li><a href="/home?pageNo=1">1</a></li>
+			    	<li><a href="/home?pageNo=2">2</a></li>
+			    	<li><a href="#">...</a></li>
+				    <li><a href="/home?pageNo=<%- page-1%>"><%- page-1%></a></li>
+				    <li><a href="/home?pageNo=<%- page%>"><%- page%></a></li>
+			    <% }else{ %>
+			    	<% for(let i=0;i<page;i++){%>
+			    		<li><a href="/home?pageNo=<%- i+1 %>"><%- i+1 %></a></li>
+			    	
+			    	<% } %>
+			    <% } %>
+			    
+			    <li>
+			      <a href="/home?pageNo=<%- pageNo>=page?page:parseInt(pageNo)+1%>" aria-label="Next">
+			        <span aria-hidden="true">下一页</span>
+			      </a>
+			    </li>
+			  </ul>
+			</nav>
+			
+		</div>
+	</div>
+	
+	<!--添加信息-->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	       <div class="modal-header">
+	       		<h4 class="modal-title" id="myModalLabel">员工信息</h4>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		   </div>
+	      <div class="modal-body">
+	      	<div class="add">
+			  <div class="form-group">
+			    <label for="exampleInputEmail1">账号</label>
+			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="账号">
+			  </div>
+			  <div class="form-group">
+			    <label for="exampleInputPassword1">内容</label>
+			  	<textarea id="txt" class="form-control xheditor" rows="3"></textarea>
+			  </div>
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	        <button type="button" class="btn btn-info" id="xiugai">保存修改</button>
+	        <button type="button" class="btn btn-primary" id="tijiao">提交</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!--完善信息-->
+	
+	<div id="dialog" title="Basic dialog">
+		<div>
+			<div class="form">
+				<ul>
+					<li>
+						<b>Current times</b> 
+						<input type="text" name="date" id="date" />
+					</li>
+					<li>
+						<b>Hobby</b> 
+						<select>
+							<option>球类</option>
+							<option>篮球</option>
+							<option>足球</option>
+							<option>排球</option>
+						</select>
+						<select>
+							<option>艺术</option>
+							<option>绘画</option>
+							<option>舞蹈</option>
+							<option>音乐</option>
+						</select>
+						<em>其他:</em><input type="text" />
+					</li>
+					<li>
+						<b>Country/Region</b> 
+						<select>
+							<option>中国</option>
+							<option>法国</option>
+							<option>美国</option>
+							<option>日本</option>
+							<option>其他</option>
+						</select>
+					</li>
+					<li>
+						<b>City</b> 
+						<input type="text" class="city"/>
+					</li>
+					<li>
+						<b>Language</b> 
+						<select>
+							<option>English</option>
+							<option>Chinese</option>
+							<option>Japanese</option>
+							<option>French</option>
+						</select>
+					</li>
+					<li>
+						<b>Mobile phone numbers</b>
+						<input type="text" class="num"/>
+					</li>
+					<li>
+						<button class="btn btn-primary save">保存</button>							
+					</li>
+				</ul> 
+			</div>
+		</div>
+	</div>
+
+	<!--注销模态框-->
+	<div class="modal fade bs-example-modal-sm zhuxiao" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+	  <div class="modal-dialog modal-sm" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="myModalLabel">注销</h4>
+	      	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	       
+	      </div>
+	      <div class="modal-body">
+	        <input class="logname" type="text" placeholder="请输入用户名"/>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary logout">logout</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+		
+	
+	
+	
+	<script src="/javascripts/jquery-1.11.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="/javascripts/xheditor/xheditor-1.2.2.min.js"></script>
+	<script src="/javascripts/xheditor/xheditor_lang/zh-cn.js"></script>
+	<script src="/javascripts/fwb.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>		
+	<script src="/javascripts/home.js"></script>
+	 <script src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+</body>
+</html>

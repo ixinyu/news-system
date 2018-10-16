@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" href="/stylesheets/reset.css" />
+	<link rel="stylesheet" href="/stylesheets/register.css" />
+	<link rel="stylesheet" href="/fontPic/iconfont.css" />
+</head>
+<body>
+	<div class="biadan">
+		<h3>Please Write</h3>
+		<ul>
+			<li>
+				<span><i class="iconfont icon-account"></i></span>
+				<input class="usename" type="text" placeholder="用户名（3-16个字符，包含数字、字母） "/>
+				<!--<i class="iconfont icon-31guanbi"></i>
+				<i class="iconfont icon-31xuanze"></i>-->
+			</li>
+			<li>
+				<span><i class="iconfont icon-atm"></i></span>
+				<input class="pwd1" type="password" placeholder="密码"/>
+			</li>
+			<li>
+				<span><i class="iconfont icon-atm"></i></span>
+				<input class="pwd2" type="password" placeholder="确认密码"/>
+			</li>
+		</ul>
+		<p><input type="checkbox" class="check"/>我已阅读并接受</p>
+		<button class="denglu">立即注册</button>
+		<p><span>已有账号？</span><a href="/login">立即登录&gt;&gt;</a></p>	
+		
+		
+		<div class="bot">
+			<span><i class="iconfont icon-accountfilling"></i>QQ账号登录</span>
+			<span><i class="iconfont icon-atm"></i>微信账号登录</span>
+			<span><i class="iconfont icon-lanmei"></i>微博账号登录</span>
+		</div>
+	</div>
+	
+	
+	<div class="box">
+		<span>即将跳转到登录页面</span>
+	</div>
+	
+	<script src="/javascripts/jquery-1.11.0.js"></script>
+	<script type="text/javascript">
+		$(function(){	
+			//用户名验证
+			var flag=false;
+			$(".usename").change(function(){
+				var usen=$(this).val();
+				var reg=/^[a-z0-9_-]{3,16}$/;
+				if(reg.test(usen)){
+					flag=true;
+					$("<i class='iconfont icon-31xuanze'></i>").appendTo($(this).parent());  
+				}else{
+					$("<i class='iconfont icon-31guanbi'></i>").appendTo($(this).parent());  
+				
+				}
+			})
+			
+			//注册事件
+			$(".denglu").click(function(){
+				var pwd1=$(".pwd1").val();
+				var pwd2=$(".pwd2").val();
+				if(flag){
+					if(pwd1==pwd2){
+						if($(".check").is(":checked")){
+							
+							$.post("/users/register",{
+								usename:$(".usename").val(),
+								mima:$(".pwd1").val()
+							},function(data){
+								console.log(data);
+								if(data==1){
+									$(".box").stop().fadeIn().delay(500).fadeOut();
+									setTimeout(function(){
+										location.href='/login';
+									},1000);
+								}else{
+									alert("用户名已存在");
+								}
+							})
+						}else{
+							alert("请勾选复选框")
+						}
+					}else{
+						alert("两次密码输入不一致");
+					}
+				}else{
+					alert("用户名有误");
+				}
+				
+				
+				
+				
+			})
+			
+		})
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+html,body{
+	background: #EEEEEE;
+}
+.top{
+	background: #34ABE5;
+	height: 40px;
+	line-height: 40px;
+}
+.top .top-t{
+	margin-left: 322px;
+	color:#fff;
+	cursor: pointer;
+}
+.top .top-t span{
+	margin:0 20px;
+	font-weight: 700;
+}
+.top>.top-t>em{
+	float: right;
+	margin:0 10px;
+	padding: 0 20px;
+	background: #0C7CAF;
+	display: inline-block;
+	text-align: center;
+	border-radius: 10px;
+	position: relative;
+}
+.top>.top-t>button{
+	height: 40px;
+	float: right;
+	background: #0C7CAF;
+	border-radius: 10px;
+}
+.zhuxiao div.modal-content{
+	width:400px;
+}
+.modal-body>input{
+	width:100%;
+	height: 100%;
+	border:0;
+}
+
+.personal{
+	position: absolute;
+	right: -10px;
+	top:40px;
+	z-index: 6;
+	width:400px;
+	background: #0C7CAF;
+	border-radius: 30px;
+	padding: 20px;
+	display: none;
+}
+.personal>.form>ul>li:hover{
+	background: rgba(255,255,255,.3);
+}
+
+.main{
+	margin: 0 auto;
+	position: relative;
+	background: #eee;
+	border-top: 1px solid #eee;
+}
+.ml{
+	width: 220px;
+	margin: 0 10px 0 60px;
+	box-sizing: border-box;
+	position: absolute;
+	top:0px;
+}
+.logo{
+	margin-top:-20px;
+	height: 100px;
+	width: 220px;
+	background: rgba(255,255,255,.8);
+}
+.logo img{
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+.ml>p{
+	margin: 10px 0;
+	background: #fff;
+	color:#666;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+}
+.ml>p .iconfont{
+	color:#36ACE5;
+	margin: 0 10px 0 30px;
+}
+.tips{
+	padding: 0 20px 30px;
+	background: #fff;
+}
+.tips>li{
+	border-bottom: 1px solid #F1F1F1;
+	min-height: 50px;
+	line-height: 50px;
+}
+.tips>li:hover{
+	background: #F2F2F2;
+	cursor: pointer;
+}
+.tips>li i{
+	margin:0 6px 0 10px;
+	color:#FDE01E;
+}
+.tips>li>div{
+	display: none;
+}
+.tips>li>div>p{
+	color:#999;
+	margin-bottom: 0;
+	padding-left: 20px;
+}
+
+.tips>li>div>p:hover{
+	background: #cecece;
+	color:#fff;
+}
+
+
+.mr{
+	background: #fff;
+	width:70%;
+	margin: 50px 20px 0 310px;
+	position: relative;
+	padding: 20px 30px 20px 14px;
+	box-sizing: border-box;
+}
+.mr>em{
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	background: #31AFDD;
+	color:#fff;
+	position: absolute;
+	top:-30px;
+	padding: 0 10px;
+	left: 0;
+	border-radius:10px 0;
+}
+.mr>p{
+	color:#999;
+}
+.mr>p>span>em:nth-of-type(2){
+	margin: 0 10px;
+}
+.mr>p>span>em:nth-of-type(1):hover{
+	padding-bottom: 4px;
+	border-bottom: 2px solid #34ABE5;
+	cursor: pointer;
+}
+
+.select span{
+	display: inline-block;
+	border: 1px solid #cccc;
+	width: 340px;
+	height: 40px;
+	margin-right: 20px;
+}
+.select>span>i{
+	float: right;
+	height: 100%;
+	line-height: 40px;
+	cursor: pointer;
+	width:14%;
+	text-align: center;
+}
+.select>span>i:hover{
+	background: #EEEEEE;
+}
+.select>span>input{
+	border:0;
+	border-right: 1px solid #ccc;
+	height: 100%;
+	width:86%;
+	text-indent: 10px;
+	background: none;
+}
+.select button{
+	float: right;
+	color:#fff;
+}
+
+.one>.table{
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.fir{
+	background: #EEEEEE;
+}
+.fenye{
+	float: right;
+	border-radius: 10px;
+	border:1px solid #ccc;
+	margin-top: 30px;
+}
+.fenye>li{
+	padding: 6px 14px;
+	border-right:1px solid #DDDDDD;
+	cursor: pointer;
+}
+.fenye>li:last-child{
+	border:0;
+}
+.tapwrap{
+	position: relative;
+	min-height: 400px;
+}
+.one{
+	position: absolute;
+	width:900px;
+}
+.two{
+	position: absolute;
+	margin-top: 40px;
+	display: none;
+}
+/*two*/
+.ttwo{
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	width:880px;
+	margin-top: 20px;
+}
+.ttwo>.form>ul>li>span{
+	display: inline-block;
+	margin-left: 100px;
+	color:#999;
+}
+.ttwo>.form{
+	padding-bottom: 20px;
+	margin-left: 60px;
+}
+.ttwo>.form>h4{
+	font-size: 36px;
+	font-family: "comic sans ms";
+	margin-top: 20px;
+}
+.form>ul>li{
+	margin-top: 20px;
+}
+.form>ul>li>b{
+	display: inline-block;
+	width: 200px;
+}
+.form>ul>li:nth-of-type(2)>select{
+	margin-right: 20px;
+	width: 100px;
+	height: 30px;
+}
+.form>ul>li>em{
+	margin-right: 10px;
+}
+.form>ul>li:nth-of-type(3)>select{
+	width: 300px;
+	height: 30px;
+}
+.form>ul>li:nth-of-type(4)>input{
+	width: 400px;
+}
+
+/*three*/
+.three{
+	width:800px;
+	height: 400px;
+	display: none;
+	margin-top: 20px;
+}

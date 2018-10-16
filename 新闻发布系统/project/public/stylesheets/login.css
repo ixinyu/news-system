@@ -1,0 +1,152 @@
+body{
+	background: url(/images/3.jpg) no-repeat;
+	background-size: cover;
+}
+.biadan{
+	width: 424px;
+	float: left;
+	margin-left:60px;
+	/*box-sizing: border-box;*/
+	margin-top: 120px;
+	position: relative;
+}
+.biadan>h3{
+	color:#ccc;
+	font-size: 40px;
+	font-family: "comic sans ms";
+}
+.biadan>p{
+	height: 40px;
+	line-height: 40px;
+	color:#666;
+}
+.biadan>p>a{
+	color:blue;
+}
+.biadan>p>em{
+	float: right;
+	color:red;
+	font-weight: 700;
+	cursor: pointer;
+}
+.biadan li{
+	padding: 10px 0;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-top: 22px;
+	border: 1px solid #cecece;
+	box-sizing: border-box;
+}
+.biadan li span,.biadan li input{
+	float: left;
+}
+.biadan li span .iconfont{
+	font-size: 20px;
+	padding: 10px;
+	background: #FFCBA7;
+	border-bottom: 1px solid #FFCBA7;
+	border-top: 1px solid #FFCBA7;
+}
+.biadan li input{
+	width:380px;
+	border:0;
+	text-indent: 10px;
+	background: none;
+}
+.biadan li:last-child{
+	background:#FFCBA7;
+	padding: 0;
+}
+.denglu{
+	font-size: 20px;
+	color:#666;
+	height: 44px;
+	line-height: 44px;
+	display: block;
+	width:100%;
+	text-align: center;
+	cursor: pointer;
+}
+.bot{
+	margin-top: 30px;
+}
+.bot>span{
+	margin-right: 40px;
+}
+.bot>span>i{
+	display: inline-block;
+	background: #85E686;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-right: 4px;
+}
+.bot>span>i.iconfont{
+	color:#fff;
+}
+.box{
+	border:1px solid #cecece;
+	width:424px;
+	height: 100px;
+	text-align: center;
+	background: #F9F4D4;
+	position: absolute;
+	top: 76px;
+	right:-450px;
+	display: none;
+}
+.box span{
+	color:#999;
+	font-size:20px;
+	
+}
+
+.find{
+	border: 1px solid salmon;
+	width:400px;
+	position: absolute;
+	right: 300px;
+	top:60px;
+	background: rgba(255,255,255,.5);
+	padding:10px;
+	border-radius: 20px;
+	display: none;
+}
+.find>h4{
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	color: #999;
+	font-family: "comic sans ms";
+}
+.find>input,.find>button,.find>span{
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	margin: 10px 0;
+	background: none;
+	border:1px solid #CECECE;
+	border-radius: 10px;
+	text-indent: 10px;
+	outline: none;
+}
+.find>span{
+	
+	height: 40px;
+	line-height: 40px;
+	opacity: 0;
+
+}
+.find>span>input{
+	background: none;
+	border:0;
+	height: 100%;
+}
+.find>button{
+	cursor: pointer;
+}
+.find>button:hover{
+	background: rgba(255,203,167,.5);
+}
+

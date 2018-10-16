@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Document</title>
+	<link rel="stylesheet" href="/stylesheets/reset.css" />
+	<link rel="stylesheet" href="/stylesheets/login.css" />
+	<link rel="stylesheet" href="/fontPic/iconfont.css" />
+</head>
+<body>
+	<div class="biadan">
+		<h3>Please Login</h3>
+		<ul>
+			<li>
+				<span><i class="iconfont icon-account"></i></span>
+				<input class="usename" type="text" placeholder="用户名"/>
+			</li>
+			<li>
+				<span><i class="iconfont icon-atm"></i></span>
+				<input class="pwd" type="password" placeholder="密码"/>
+			</li>
+			<li>
+				<span class="denglu">登录</span>
+			</li>
+		</ul>
+		
+		<p><span>还没有有账号？</span><a href="/register">前往注册&gt;&gt;</a><em class="forget">忘记密码？找回&gt;&gt;</em></p>	
+		
+		<div class="bot">
+			<span><i class="iconfont icon-accountfilling"></i>QQ账号登录</span>
+			<span><i class="iconfont icon-atm"></i>微信账号登录</span>
+			<span><i class="iconfont icon-lanmei"></i>微博账号登录</span>
+		</div>
+		<div class="box">
+		 	<span>即将跳转到首页</span>
+		</div>
+	</div>
+	<!--忘记密码-->
+	<div class="find">
+		<h4>Retrieve Password</h4>
+		<input class="val" type="text" placeholder="请输入用户名"/><br />
+		<button class="retrieve">点击找回</button>
+		<span class="zhao">您的密码为：<input type="text"/></span>
+	</div>
+	
+	
+	
+	
+	<script src="/javascripts/jquery-1.11.0.js"></script>
+	<script type="text/javascript">
+		$(function(){	
+			$(".denglu").click(function(){
+				var $mima=$(".pwd").val();
+				$.post("/users/login",{
+					usename:$(".usename").val()
+				},function(data){
+					if(data==0){
+						alert("请先注册再登录");	
+						location.href="/login";
+					}else if($mima==data[0].mima){
+						console.log(data);
+						$(".box").stop().fadeIn().delay(500).fadeOut();
+						if($(".usename").val()=="admin"){
+							location.href='/home';
+						}else{
+							location.href="/ordinary";
+						}
+							
+						
+					}else{
+						alert("用户名密码不一致");
+						location.href='/login';
+					}
+					 
+				})
+			})
+			
+		//找回密码
+		$(".forget").click(function(){
+			$(".find").slideToggle();
+		})
+		$(".find").mouseleave(function(){
+			$(this).slideUp();
+		})
+		
+		$(".retrieve").click(function(){
+			$val=$(".val");
+			$.ajax({
+				type:"post",
+				url:"/users/login",
+				data:{usename:$val.val()},
+				success:function(data){
+					console.log(data);
+					if(data==0){
+						$(".zhao").css({opacity: 1}).children("input").val("用户名有误");
+						$val.val("");
+					}else{
+						$(".zhao").css({opacity: 1}).children("input").val(data[0].mima);
+					
+					}
+					
+					
+				}
+			});
+		})
+			
+			
+			
+		})
+		
+	</script>
+</body>
+</html>

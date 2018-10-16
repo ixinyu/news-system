@@ -1,0 +1,114 @@
+body{
+	background: url(/images/reg.jpg) no-repeat;
+	background-size: cover;
+}
+.biadan{
+	width: 424px;
+	float: right;
+	margin-right:26px;
+	box-sizing: border-box;
+	margin-top: 120px;
+}
+.biadan>h3{
+	color:#ccc;
+	font-size: 40px;
+	font-family: "comic sans ms";
+}
+.biadan li{
+	height: 40px;
+	line-height: 40px;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-top: 24px;
+	border: 1px solid #cecece;
+	box-sizing: border-box;
+	position: relative;
+}
+.biadan li>i{
+	background: #8AE58D;
+	color:#fff;
+	padding: 0;
+	display: inline-block;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 10px;
+	position: absolute;
+	top:0;
+	right: 0;
+}
+.biadan li span,.biadan li input{
+	float: left;
+}
+.biadan li span>.iconfont{
+	font-size: 20px;
+	padding: 10px;
+	background:#EE5B53;
+}
+.biadan li input{
+	width:380px;
+	border:0;
+	text-indent: 10px;
+	background: none;
+	height: 100%;
+}
+.biadan>p{
+	height: 40px;
+	line-height: 40px;
+	color:#666;
+}
+.biadan>p>a{
+	color:blue;
+}
+.biadan>p>input{
+	vertical-align:middle;
+	margin-right: 10px;
+}
+
+.denglu{
+	background: #EE5B53;
+	padding: 0;
+	font-size: 20px;
+	color:#fff;
+	height: 44px;
+	line-height: 44px;
+	display: block;
+	width:100%;
+	text-align: center;
+	border: 0;
+	border-radius: 10px;
+	cursor: pointer;
+}
+.bot{
+	margin-top: 30px;
+}
+.bot>span{
+	margin-right: 40px;
+}
+.bot>span>i{
+	display: inline-block;
+	background: #85E686;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	margin-right: 4px;
+}
+.bot>span>i.iconfont{
+	color:#fff;
+}
+.box{
+	border:1px solid #cecece;
+	width:420px;
+	height: 100px;
+	text-align: center;
+	background: #F9F4D4;
+	position: fixed;
+	bottom: 10px;
+	right:30px;
+	display: none;
+}
+.box span{
+	color:#999;
+	font-size:20px;
+	
+}
